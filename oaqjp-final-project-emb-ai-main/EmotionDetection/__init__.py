@@ -2,4 +2,4 @@
 Emotiondetection package
 """
 
-from emotion_detection import emotion_detector
+from EmotionDetection.emotion_detection import emotion_detector

@@ -37,6 +37,3 @@ def emotion_detector(text):
 
     return(final_result)
 
-
-    if __name__ == "__main__":
-    main()
