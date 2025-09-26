@@ -36,3 +36,7 @@ def emotion_detector(text):
     final_result['dominant_emotion'] = dominant_emotion
 
     return(final_result)
+
+
+    if __name__ == "__main__":
+    main()
