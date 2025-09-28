@@ -8,21 +8,14 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-@app.route("/emotionDetector/", methods=["GET"])
-def emotionDetectionfunction():
-    if request.method == 'GET':
-        x="Example response"
-        # Redirect to the transactions list page after adding the new transaction
-        return x
 
-@app.route("/emotionDetector/", methods=["POST"])
-def submitText():
-    if request.method == 'POST':
-        #x="Example response"
-        text = request.form.get("textToAnalyze")
-        # Redirect to the transactions list page after adding the new transaction
-        return text
-
+@app.route("/emotionDetector")
+def emotion_detector_function():
+    # Get the query parameter "textToAnalyze"
+    text_to_analyze = request.args.get("textToAnalyze", "")
+    # Return it back as plain text
+    text_analysed = emotion_detector(text_to_analyze) 
+    return "For the given statement, the system response is 'anger': " + str(text_analysed["anger"]) + ", 'disgust': " + str(text_analysed["disgust"]) + ", 'fear': " + str(text_analysed["fear"]) + ", 'joy': " + str(text_analysed["joy"]) + " and 'sadness': " + str(text_analysed["sadness"]) + ". The dominant emotion is " + str(text_analysed["dominant_emotion"]) + "."
 
 if __name__ == "__main__":
     app.run(debug=True)
