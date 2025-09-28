@@ -1,4 +1,4 @@
-#Repository for final project - Python Flask AI course
+# Repository for final project - Python Flask AI course
 
 This is a Python Flask project using IBM Watson emotion detection library.
 
